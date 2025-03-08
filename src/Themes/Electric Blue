@@ -1,0 +1,60 @@
+return {
+	Name = "Electric Blue",
+	Accent = Color3.fromRGB(55, 120, 255),
+
+	AcrylicMain = Color3.fromRGB(20, 20, 40),
+	AcrylicBorder = Color3.fromRGB(70, 110, 180),
+	AcrylicGradient = ColorSequence.new(Color3.fromRGB(50, 140, 255), Color3.fromRGB(30, 60, 200)),
+	AcrylicNoise = 0.92,
+
+	TitleBarLine = Color3.fromRGB(85, 120, 200),
+	Tab = Color3.fromRGB(140, 180, 255),
+
+	Element = Color3.fromRGB(100, 160, 255),
+	ElementBorder = Color3.fromRGB(40, 70, 120),
+	InElementBorder = Color3.fromRGB(60, 90, 140),
+	ElementTransparency = 0.86,
+
+	ToggleSlider = Color3.fromRGB(100, 160, 255),
+	ToggleToggled = Color3.fromRGB(0, 0, 0),
+
+	SliderRail = Color3.fromRGB(100, 160, 255),
+
+	DropdownFrame = Color3.fromRGB(120, 180, 255),
+	DropdownHolder = Color3.fromRGB(40, 75, 120),
+	DropdownBorder = Color3.fromRGB(30, 55, 90),
+	DropdownOption = Color3.fromRGB(100, 160, 255),
+
+	Keybind = Color3.fromRGB(100, 160, 255),
+
+	Input = Color3.fromRGB(100, 160, 255),
+	InputFocused = Color3.fromRGB(10, 20, 60),
+	InputIndicator = Color3.fromRGB(150, 170, 255),
+
+	Dialog = Color3.fromRGB(40, 75, 120),
+	DialogHolder = Color3.fromRGB(35, 60, 95),
+	DialogHolderLine = Color3.fromRGB(30, 55, 90),
+	DialogButton = Color3.fromRGB(40, 75, 120),
+	DialogButtonBorder = Color3.fromRGB(90, 115, 180),
+	DialogBorder = Color3.fromRGB(70, 90, 130),
+	DialogInput = Color3.fromRGB(55, 80, 135),
+	DialogInputLine = Color3.fromRGB(160, 180, 255),
+
+	Text = Color3.fromRGB(240, 240, 240),
+	SubText = Color3.fromRGB(170, 170, 170),
+	Hover = Color3.fromRGB(100, 160, 255),
+	HoverChange = 0.04,
+}
+		}
+
+		local InterfaceTheme = section:AddDropdown("InterfaceTheme", {
+			Title = "Theme",
+			Description = "Changes the interface theme.",
+			Values = Library.Themes and theme,
+			Default = Settings.Theme,
+			Callback = function(Value)
+				Library:SetTheme(Value)
+                Settings.Theme = Value
+                InterfaceManager:SaveSettings()
+			end
+		}
